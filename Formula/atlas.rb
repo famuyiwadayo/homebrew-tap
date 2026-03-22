@@ -6,7 +6,7 @@ class Atlas < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/famuyiwadayo/atlas/releases/download/v0.2.0/atlas-darwin-arm64"
+      url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.0/atlas-darwin-arm64"
       sha256 "e9a59b09917f045d3d219eb5d2415c497be407f35ab5ccc1c402bd08e3dff868"
     end
   end
@@ -36,7 +36,7 @@ class Atlas < Formula
 
       For local embeddings (no API key needed):
         brew install faiss onnxruntime
-        Download the model: curl -fsSL https://github.com/famuyiwadayo/atlas/releases/download/v0.2.0/embed-local.onnx -o ~/.atlas/models/embed-local.onnx
+        Download the model: curl -fsSL https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.0/embed-local.onnx -o ~/.atlas/models/embed-local.onnx
     EOS
   end
 
