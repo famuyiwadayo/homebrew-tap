@@ -1,13 +1,13 @@
 class Atlas < Formula
   desc "Persistent knowledge graph and AI memory engine"
   homepage "https://github.com/famuyiwadayo/atlas"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.1/atlas-v0.2.1-darwin-arm64.tar.gz"
-      sha256 "ea65330e0bea051fd30cdfff7880b609e5c67e890f6f7dee2ee6be70da6f685d"
+      url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.2/atlas-v0.2.2-darwin-arm64.tar.gz"
+      sha256 "bf117799e7507499f050cfe5087c656e71e54406af987600ab4addda69a33227"
     end
   end
 
