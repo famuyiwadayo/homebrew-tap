@@ -1,12 +1,12 @@
 class Atlas < Formula
   desc "Persistent knowledge graph and AI memory engine"
   homepage "https://github.com/famuyiwadayo/atlas"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.0/atlas-darwin-arm64"
+      url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.1/atlas-darwin-arm64"
       sha256 "b8e5f45ab0de8bf37b7beca5875fefd8e66c5d02f605b116c1a0c5bb05a14de6"
     end
   end
@@ -36,7 +36,7 @@ class Atlas < Formula
 
       For local embeddings (no API key needed):
         brew install faiss onnxruntime
-        Download the model: curl -fsSL https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.0/embed-local.onnx -o ~/.atlas/models/embed-local.onnx
+        Download the model: curl -fsSL https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.1/embed-local.onnx -o ~/.atlas/models/embed-local.onnx
     EOS
   end
 
