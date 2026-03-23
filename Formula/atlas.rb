@@ -7,7 +7,7 @@ class Atlas < Formula
   on_macos do
     on_arm do
       url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.1/atlas-darwin-arm64"
-      sha256 "b8e5f45ab0de8bf37b7beca5875fefd8e66c5d02f605b116c1a0c5bb05a14de6"
+      sha256 "73b29067b57a314299a74c783ab9eaf57eb987bc6d265ccda0e3e01bba727baa"
     end
   end
 
