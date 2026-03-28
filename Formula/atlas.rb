@@ -1,20 +1,25 @@
 class Atlas < Formula
   desc "Persistent knowledge graph and AI memory engine"
   homepage "https://github.com/famuyiwadayo/atlas"
-  version "0.2.4"
-  license "MIT"
+  version "0.3.2"
+  license "BUSL-1.1"
+
+  # The binary links against these via Homebrew's stable opt/ symlinks.
+  depends_on "faiss"
+  depends_on "onnxruntime"
+  depends_on "sentencepiece"
+  depends_on "zstd"
 
   on_macos do
     on_arm do
-      url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v0.2.4/atlas-v0.2.4-darwin-arm64.tar.gz"
-      sha256 "5310bb71f2f0089bb2bfae4e6e699f7e2d80c0d819c2446dbe230c8338c87088"
+      url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v#{version}/atlas-darwin-arm64"
+      sha256 "42c898e433629dd91ba4435a2fbf7d77b1514050d2880ea5386ee0a325232381"
     end
   end
 
   def install
-    bin.install "bin/atlas"
-    lib.install Dir["lib/*"]
-    (share/"atlas/models").install Dir["models/*"]
+    arch = Hardware::CPU.arm? ? "darwin-arm64" : "darwin-amd64"
+    bin.install "atlas-#{arch}" => "atlas"
   end
 
   def caveats
@@ -24,22 +29,21 @@ class Atlas < Formula
         atlas remember "your first memory"
         atlas recall "memory"
 
-      For Claude integration:
+      For Claude Code integration:
         claude mcp add atlas --scope user -- #{bin}/atlas mcp-serve
 
-      For semantic search, set your OpenAI API key:
+      For cloud embeddings (requires OpenAI key):
         atlas config set ATLAS_OPENAI_API_KEY sk-your-key
 
-      Local embedding model installed at:
-        #{share}/atlas/models/embed-local.onnx
-
-      To use it:
-        mkdir -p ~/.atlas/models
-        ln -sf #{share}/atlas/models/* ~/.atlas/models/
+      For local embedding models, run:
+        atlas init
+      This will set up the model files in ~/.atlas/models/.
     EOS
   end
 
   test do
-    assert_match "atlas", shell_output("#{bin}/atlas version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/atlas version 2>&1")
+    ENV["HOME"] = testpath
+    system bin/"atlas", "status"
   end
 end
