@@ -16,7 +16,7 @@ class AtlasMemory < Formula
   on_macos do
     on_arm do
       url "https://github.com/famuyiwadayo/atlas-releases/raw/v0.3.3/atlas-darwin-arm64"
-      sha256 "776f339db25d9010cdc1f525121def957e77b8b194b4a2f821ce70fb200675d4"
+      sha256 "d01092b91860d79b8dd71b582103bc64562046e2d24e85c59630f3a8744a247d"
     end
   end
 
