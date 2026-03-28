@@ -1,8 +1,11 @@
-class Atlas < Formula
+class AtlasMemory < Formula
   desc "Persistent knowledge graph and AI memory engine"
   homepage "https://github.com/famuyiwadayo/atlas"
-  version "0.3.2"
+  version "0.3.3"
   license "BUSL-1.1"
+
+  # Conflicts with atlasgo's atlas formula (both install an `atlas` binary).
+  conflicts_with "atlas", because: "both install an `atlas` binary"
 
   # The binary links against these via Homebrew's stable opt/ symlinks.
   depends_on "faiss"
@@ -13,7 +16,7 @@ class Atlas < Formula
   on_macos do
     on_arm do
       url "https://github.com/famuyiwadayo/atlas-releases/releases/download/v#{version}/atlas-darwin-arm64"
-      sha256 "42c898e433629dd91ba4435a2fbf7d77b1514050d2880ea5386ee0a325232381"
+      sha256 "placeholder_sha256_updated_by_ci"
     end
   end
 
